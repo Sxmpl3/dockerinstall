@@ -11,6 +11,6 @@ Herramienta creada en bash con la intención de facilitar la implementación de 
   
   3: chmod +x dockerinstall.sh
   
-  4: ./dockerinstall -d
+  4: ./dockerinstall.sh -d
   
-  5: ./dockerinstall -h
+  5: ./dockerinstall.sh -h
