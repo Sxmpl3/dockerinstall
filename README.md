@@ -9,7 +9,7 @@ Herramienta creada en bash con la intención de facilitar la implementación de 
   
   2: cd dockerinstall
   
-  3: chmod +x dockerinstall
+  3: chmod +x dockerinstall.sh
   
   4: ./dockerinstall -d
   
