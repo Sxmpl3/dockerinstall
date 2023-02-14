@@ -41,6 +41,15 @@ fi
 if [[ $1 == "-m" ]];then
 
     docker run --name mysql -e MYSQL_ROOT_PASSWORD=@Puente22 -d -p 3333:3306 mysql
+    docker ps | awk 'NR==2{print $1}' | xclip -selection clipboard
+    docker exec -it $(xclip -o) /bin/bash
+    apt update -y
+    mysql -u root -p
+    @Puente22
+    create database wordpress
+    create database credentials
+    exit
+    exit
 fi
 
 if [[ $1 == "-l" ]];then
@@ -52,7 +61,6 @@ if [[ $1 == "-r" ]];then
     
     docker run -d --name register -p 8081:80 httpd:2.4
 fi
-
 
 
 
