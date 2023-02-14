@@ -14,11 +14,11 @@ if [[ $1 == "-h" ]];then
 
     echo -e "Script creado por https://github.com/Sxmpl3"
     echo -e "-------------------------------------------"
-    echo -e "-d [INSTALACION DE DOCKER]"
-    echo -e "-w [INSTALACION DE CONTENEDOR WORDPRESS]"
-    echo -e "-m [INSTALACION DE CONTENEDOR MARIADB]"
-    echo -e "-l [INSTALACION DE CONTENEDOR LOGIN]"
-    echo -e "-r [INSTALACION DE CONTENEDOR REGISTER]"
+    echo -e "./dockerinstall.sh -d [INSTALACION DE DOCKER]"
+    echo -e "./dockerinstall.sh -w [INSTALACION DE CONTENEDOR WORDPRESS]"
+    echo -e "./dockerinstall.sh -m [INSTALACION DE CONTENEDOR MARIADB]"
+    echo -e "./dockerinstall.sh -l [INSTALACION DE CONTENEDOR LOGIN]"
+    echo -e "./dockerinstall.sh -r [INSTALACION DE CONTENEDOR REGISTER]"
     echo -e ""
 fi
 
