@@ -23,7 +23,7 @@ Una vez iniciamos la instancia de AWS y tenemos una conexion via SSH entablada c
 
 # MySQL
 
-    ./dockerinstall.sh -m
+    ./dockerinstall.sh -m #crearemos contenedor de mysql con reenvio de puerto 3333:3306 y obtendremos una shell del mismo para poder configurar mysql
   
     apt update -y 
   
