@@ -33,19 +33,4 @@ Herramienta creada en bash con la intención de facilitar la implementación de 
   
   8: 
   
-  # Login
-  
-  1: ./dockerinstall.sh -l
-  
-  2: apt update -y
-  
-  3: apt install wget -y
-  
-  4: cd htdocs
-  
-  5: rm index.html
-  
-  6: wget http://127.0.0.1/app.js
-  
-  7: wget http://127.0.0.1/app.js
   
