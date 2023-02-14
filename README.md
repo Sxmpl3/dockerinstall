@@ -5,15 +5,21 @@ Herramienta creada en bash con la intención de facilitar la implementación de 
 
 # COMO USAR LA HERRAMIENTA
 
-  1: git clone https://github.com/Sxmpl3/dockerinstall
+Una vez iniciamos la instancia de AWS y tenemos una conexion via SSH entablada con nuestra máquina, realizamos los siguientes comandos
+
+  1: apt update -y
   
-  2: cd dockerinstall
+  2: apt install git -y
+
+  3: git clone https://github.com/Sxmpl3/dockerinstall
   
-  3: chmod +x dockerinstall.sh
+  4: cd dockerinstall
   
-  4: ./dockerinstall.sh -d
+  5: chmod +x dockerinstall.sh
   
-  5: ./dockerinstall.sh -h
+  6: ./dockerinstall.sh -d
+  
+  7: ./dockerinstall.sh -h
 
 # MySQL
 
