@@ -1,13 +1,5 @@
 #!/bin/bash
 
-# COMANDOS ESENCIALES
-# LISTAR DOCKERS -> docker ps
-# SHELL DE CONTENEDOR DOCKER -> docker exec -it id /bin/bash
-
-# AL CONECTARNOS A LA SHELL HACER UPDATE E INSTALAR NANO, EN EL DIRECTORIO /usr/local/apache2/htdocs/ SE ENCONTRARA EL index.html
-
-# MYSQL: create database wordpress; | create database user; | use user; | create table credenciales (username varchar(255), password varchar(255));
-
 if [[ $1 == "" ]];then
 
     echo -e "[USE EL SIGUIENTE PARAMETRO PARA APRENDER USAR LA HERRAMIENTA]"
