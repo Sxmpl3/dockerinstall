@@ -23,21 +23,21 @@ Una vez iniciamos la instancia de AWS y tenemos una conexion via SSH entablada c
 
 # MySQL
 
-  1: ./dockerinstall.sh -m
+    1: ./dockerinstall.sh -m
   
-  2: apt update -y 
+    2: apt update -y 
   
-  3: mysql -u root -p
+    3: mysql -u root -p
   
-  4: @Puente22
+    4: @Puente22
   
-  5: create database wordpress;
+    5: create database wordpress;
   
-  6: create database credentials;
+    6: create database credentials;
   
-  7: use credentials;
+    7: use credentials;
   
-  8: 
+    8: 
   
   # Wordpress
   
