@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# COMANDOS ESENCIALES
+# LISTAR DOCKERS -> docker ps
+# SHELL DE CONTENEDOR DOCKER -> docker exec -it id /bin/bash
+
+# AL CONECTARNOS A LA SHELL HACER UPDATE E INSTALAR NANO, EN EL DIRECTORIO /usr/local/apache2/htdocs/ SE ENCONTRARA EL index.html
+
+# MYSQL: create database wordpress; | create database user; | use user; | create table credenciales (username varchar(255), password varchar(255));
+
 if [[ $1 == "" ]];then
 
     echo -e "[USE EL SIGUIENTE PARAMETRO PARA APRENDER USAR LA HERRAMIENTA]"
@@ -24,6 +32,9 @@ if [[ $1 == "-d" ]];then
 
     apt install docker docker-compose -y
     apt update
+    docker pull node
+    docker pull wordpress
+    docker pull mysql
 fi
 
 if [[ $1 == "-w" ]];then
@@ -41,18 +52,12 @@ fi
 
 if [[ $1 == "-l" ]];then
     
-    docker run -d --name login -p 8080:80 httpd:2.4
-    LOGIN=$(docker ps | awk 'NR==2{print $1}') 
-    docker exec -it $LOGIN /bin/bash
-    # UNA VEZ EJECUTADO EL COMANDO REVISAR EL README
+    docker container run -d -p 8080:3000 --name login -w /home/admin/dockerinstall/login node npm start
 fi
 
 if [[ $1 == "-r" ]];then
     
-    docker run -d --name register -p 8081:80 httpd:2.4
-    REGISTER=$(docker ps | awk 'NR==2{print $1}') 
-    docker exec -it $REGISTER /bin/bash
-    # UNA VEZ EJECUTADO EL COMANDO REVISAR EL README
+    docker container run -d -p 8081:3001 --name register -w /home/admin/dockerinstall/login node npm start
 fi
 
 
