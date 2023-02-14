@@ -1,12 +1,6 @@
 #!/bin/bash
 
-# COMANDOS ESENCIALES
-# LISTAR DOCKERS -> docker ps
-# SHELL DE CONTENEDOR DOCKER -> docker exec -it id /bin/bash
-
-# AL CONECTARNOS A LA SHELL HACER UPDATE E INSTALAR NANO, EN EL DIRECTORIO /usr/local/apache2/htdocs/ SE ENCONTRARA EL index.html
-
-# MYSQL: create database wordpress; | create database user; | use user; | create table credenciales (username varchar(255), password varchar(255));
+# SCRIPT CREADO PARA LA INSTALAR DE FORMA AUTOMATICA 4 DOCKERS DISTINTOS EN UNA INSTANCIA EC2 DE AMAZON, CADA CONTENEDOR SE REENVIA A OTRO PUERTO DISTINTO
 
 if [[ $1 == "" ]];then
 
