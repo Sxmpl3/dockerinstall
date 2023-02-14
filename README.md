@@ -39,4 +39,18 @@ Una vez iniciamos la instancia de AWS y tenemos una conexion via SSH entablada c
   
   8: 
   
+  # Wordpress
+  
+    1: ./dockerinstall.sh -w
+    
+# Login
+  
+    1: ./dockerinstall.sh -l
+    
+# Register
+  
+    1: ./dockerinstall.sh -r
+  
+  
+  
   
