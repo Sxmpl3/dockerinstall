@@ -17,9 +17,9 @@ Una vez iniciamos la instancia de AWS y tenemos una conexion via SSH entablada c
   
   5: chmod +x dockerinstall.sh
   
-  6: ./dockerinstall.sh -d
+  6: ./dockerinstall.sh -d (instalaremos docker y docker-compose)
   
-  7: ./dockerinstall.sh -h
+  7: ./dockerinstall.sh -h (nos apareceran los argumentos disponibles para usar en la herramienta)
 
 # MySQL
 
