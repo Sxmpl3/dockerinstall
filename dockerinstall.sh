@@ -29,6 +29,7 @@ if [[ $1 == "-d" ]];then
     docker pull node
     docker pull wordpress
     docker pull mysql
+    docker pull php
 fi
 
 if [[ $1 == "-w" ]];then
