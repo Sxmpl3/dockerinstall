@@ -47,12 +47,16 @@ fi
 
 if [[ $1 == "-l" ]];then
     
-    docker container run -d -p 8080:3000 --name login -w /home/admin/dockerinstall/login php
+   docker container run -d -p 8080:80 --name login httpd:2.4
+   LOGIN=$(docker ps | awk 'NR==2{print $1}')
+   docker exec -it $LOGIN /bin/bash
 fi
 
 if [[ $1 == "-r" ]];then
-    
-    docker container run -d -p 8081:3001 --name register -w /home/admin/dockerinstall/register php
+
+   docker container run -d -p 8081:80 --name register httpd:2.4
+   REGISTER=$(docker ps | awk 'NR==2{print $1}')
+   docker exec -it $REGISTER /bin/bash
 fi
 
 
