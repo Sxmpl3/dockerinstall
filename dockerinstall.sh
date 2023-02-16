@@ -47,12 +47,12 @@ fi
 
 if [[ $1 == "-l" ]];then
     
-    docker container run -d -p 8080:3000 --name login -w /home/admin/dockerinstall/login node npm start
+    docker container run -d -p 8080:3000 --name login -w /home/admin/dockerinstall/login php
 fi
 
 if [[ $1 == "-r" ]];then
     
-    docker container run -d -p 8081:3001 --name register -w /home/admin/dockerinstall/register node npm start
+    docker container run -d -p 8081:3001 --name register -w /home/admin/dockerinstall/register php
 fi
 
 
