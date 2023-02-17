@@ -38,16 +38,19 @@ Una vez iniciamos la instancia de AWS y tenemos una conexion via SSH entablada c
     create database credentials;
   
     use credentials;
-  
+
+    create table credentials (username varchar(255), password varchar(255));
     
-  
-  # Wordpress
+
+# Wordpress
   
     ./dockerinstall.sh -w
+
     
 # Login
   
     ./dockerinstall.sh -l
+ 
     
 # Register
   
