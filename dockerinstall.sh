@@ -28,7 +28,8 @@ if [[ $1 == "-d" ]];then
     apt update
     docker pull wordpress
     docker pull mysql
-    docker pull httpd:2.4
+    docker pull nicogarcia05/login-app
+    docker pull nicogarcia05/register-app
 fi
 
 if [[ $1 == "-w" ]];then
