@@ -26,7 +26,6 @@ if [[ $1 == "-d" ]];then
 
     apt install docker docker-compose -y
     apt update
-    docker pull node
     docker pull wordpress
     docker pull mysql
     docker pull httpd:2.4
