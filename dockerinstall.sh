@@ -24,36 +24,49 @@ fi
 
 if [[ $1 == "-d" ]];then
 
-    apt install docker docker-compose -y
-    apt update
-    docker pull wordpress
-    docker pull mysql
-    docker pull nicogarcia05/login-app
-    docker pull nicogarcia05/register-app
+    echo -e "Instalando docker..."
+    apt install docker docker-compose -y -qq
+    apt update -y -qq
+    echo -e "Instalando las imagenes necesarias..."
+    docker pull wordpress > /dev/null 2>&1
+    docker pull mysql > /dev/null 2>&1
+    docker pull nicogarcia05/login-app > /dev/null 2>&1
+    docker pull nicogarcia05/register-app > /dev/null 2>&1
+    echo -e "Instalado con éxito"
 fi
 
 if [[ $1 == "-w" ]];then
-
-    docker container run -d --name wordpress -p 80:80 wordpress
+    
+    echo -e "Iniciando contenedor de Wordpress en el puerto 80..."
+    docker container run -d --name wordpress -p 80:80 wordpress > /dev/null 2>&1
+    echo -e ""
+    echo -e "Iniciado con éxito"
 fi
 
 if [[ $1 == "-m" ]];then
-
-    docker run --name mysql -e MYSQL_ROOT_PASSWORD=@Puente22 -d -p 3333:3306 mysql
-    MYSQL=$(docker ps | awk 'NR==2{print $1}') 
-    docker exec -it $MYSQL /bin/bash
+    
+    echo -e "Iniciando contenedor de MySQL en el puerto 3333..."
+    docker run --name mysql -e MYSQL_ROOT_PASSWORD=@Puente22 -d -p 3333:3306 mysql > /dev/null 2>&1
+    echo -e ""
+    echo -e "Iniciado con éxito"
+    MYSQL=$(docker ps | awk 'NR==2{print $1}') > /dev/null 2>&1
+    echo -e ""
+    echo -e "Accediendo al contenedor mediante una /bin/bash..."
+    docker exec -it $MYSQL /bin/bash  > /dev/null 2>&1
     # UNA VEZ EJECUTADO EL COMANDO REVISAR EL README
 fi
 
 if [[ $1 == "-l" ]];then
     
-   docker container run -d -p 8080:80 --name login httpd:2.4
-   LOGIN=$(docker ps | awk 'NR==2{print $1}')
-   docker exec -it $LOGIN /bin/bash
-fi
+   echo -e "Iniciando contenedor de Login en el puerto 8080..."
+   docker container run -d -p 8080:80 --name login httpd:2.4 > /dev/null 2>&1
+   LOGIN=$(docker ps | awk 'NR==2{print $1}') > /dev/null 2>&1
+   docker exec -it $LOGIN /bin/bash > /dev/null 2>&1
+fi 
 
 if [[ $1 == "-r" ]];then
 
+   echo -e "Iniciando contenedor de Register en el puerto 8081..."
    docker container run -d -p 8081:80 --name register httpd:2.4
    REGISTER=$(docker ps | awk 'NR==2{print $1}')
    docker exec -it $REGISTER /bin/bash
