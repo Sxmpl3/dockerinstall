@@ -2,6 +2,8 @@
 
 Herramienta creada en bash con la intención de facilitar la implementación de 4 Dockers en una instancia EC2
 
+Login y Register creados por [nicogarcia0](https://github.com/nicogarcia0)
+
 
 # COMO USAR LA HERRAMIENTA
 
@@ -36,16 +38,19 @@ Una vez iniciamos la instancia de AWS y tenemos una conexion via SSH entablada c
     create database credentials;
   
     use credentials;
-  
+
+    create table credentials (username varchar(255), password varchar(255));
     
-  
-  # Wordpress
+
+# Wordpress
   
     ./dockerinstall.sh -w
+
     
 # Login
   
     ./dockerinstall.sh -l
+ 
     
 # Register
   
