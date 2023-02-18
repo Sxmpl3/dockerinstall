@@ -25,9 +25,9 @@ fi
 if [[ $1 == "-d" ]];then
 
     echo -e "Instalando docker..."
-    apt install docker docker-compose -y -qq
+    apt install docker docker-compose -y > /dev/null 2>&1
     apt update -y -qq
-    echo -e "Instalando las imagenes necesarias..."
+    echo -e "Instalando las imagenes necesarias...(esto puede llevar algo de tiempo)"
     docker pull wordpress > /dev/null 2>&1
     docker pull mysql > /dev/null 2>&1
     docker pull nicogarcia05/login-app > /dev/null 2>&1
