@@ -49,20 +49,17 @@ if [[ $1 == "-m" ]];then
     
     echo -e "\n[-] Iniciando contenedor de MySQL en el puerto 3333..."
     docker run --name mysql -e MYSQL_ROOT_PASSWORD=@Puente22 -d -p 3333:3306 mysql > /dev/null 2>&1
-    echo -e ""
     MYSQL=$(docker ps | awk 'NR==2{print $1}') > /dev/null 2>&1
     echo -e ""
     echo -e "\n[+] Accediendo al contenedor de MySQL..."
-    docker exec -it $MYSQL /bin/bash  > /dev/null 2>&1
+    echo -e ""
+    docker exec -it $MYSQL /bin/bash
     # UNA VEZ EJECUTADO EL COMANDO REVISAR EL README
 fi
 
 if [[ $1 == "-l" ]];then
     
    echo -e "\n[-] Iniciando contenedor de Login en el puerto 8080..."
-   docker container run -d -p 8080:80 --name login httpd:2.4 > /dev/null 2>&1
-   LOGIN=$(docker ps | awk 'NR==2{print $1}') > /dev/null 2>&1
-   docker exec -it $LOGIN /bin/bash > /dev/null 2>&1
    echo -e ""
    echo -e "\n[+] Iniciado con éxito"
    echo -e ""
@@ -71,9 +68,6 @@ fi
 if [[ $1 == "-r" ]];then
 
    echo -e "\n[-] Iniciando contenedor de Register en el puerto 8081..."
-   docker container run -d -p 8081:80 --name register httpd:2.4
-   REGISTER=$(docker ps | awk 'NR==2{print $1}')
-   docker exec -it $REGISTER /bin/bash
    echo -e ""
    echo -e "\n[+] Iniciado con éxito"
    echo -e ""
