@@ -33,6 +33,7 @@ if [[ $1 == "-d" ]];then
     docker pull nicogarcia05/login-app > /dev/null 2>&1
     docker pull nicogarcia05/register-app > /dev/null 2>&1
     echo -e "\n[+] Instalado con éxito"
+    echo -e ""
 fi
 
 if [[ $1 == "-w" ]];then
@@ -41,6 +42,7 @@ if [[ $1 == "-w" ]];then
     docker container run -d --name wordpress -p 80:80 wordpress > /dev/null 2>&1
     echo -e ""
     echo -e "\n[+] Iniciado con éxito"
+    echo -e ""
 fi
 
 if [[ $1 == "-m" ]];then
@@ -50,7 +52,7 @@ if [[ $1 == "-m" ]];then
     echo -e ""
     MYSQL=$(docker ps | awk 'NR==2{print $1}') > /dev/null 2>&1
     echo -e ""
-    echo -e "\n[+] Accediendo al contenedor mediante una /bin/bash..."
+    echo -e "\n[+] Accediendo al contenedor de MySQL..."
     docker exec -it $MYSQL /bin/bash  > /dev/null 2>&1
     # UNA VEZ EJECUTADO EL COMANDO REVISAR EL README
 fi
@@ -63,6 +65,7 @@ if [[ $1 == "-l" ]];then
    docker exec -it $LOGIN /bin/bash > /dev/null 2>&1
    echo -e ""
    echo -e "\n[+] Iniciado con éxito"
+   echo -e ""
 fi 
 
 if [[ $1 == "-r" ]];then
@@ -73,6 +76,7 @@ if [[ $1 == "-r" ]];then
    docker exec -it $REGISTER /bin/bash
    echo -e ""
    echo -e "\n[+] Iniciado con éxito"
+   echo -e ""
 fi
 
 
