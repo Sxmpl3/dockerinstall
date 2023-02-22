@@ -49,7 +49,7 @@ if [[ $1 == "-m" ]];then
     echo -e "\n[-] Iniciando contenedor de MySQL en el puerto 3333..."
     docker run --name mysql -e MYSQL_ROOT_PASSWORD=@Puente22 -d -p 3333:3306 \
     -e MYSQL_DATABASE=credentials \
-    mysql:latest \
+    mysql \
     --init-file "USE credentials; \
                  CREATE TABLE users (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(30) NOT NULL, password VARCHAR(30) NOT NULL); \
                  INSERT INTO users (username, password) VALUES ('usuario1', 'clave1'), ('usuario2', 'clave2');"
