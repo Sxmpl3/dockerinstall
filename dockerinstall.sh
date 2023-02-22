@@ -60,7 +60,7 @@ if [[ $1 == "-l" ]];then
     
    echo -e "\n[-] Iniciando contenedor de Login en el puerto 8080..."
    echo -e ""
-   docker run --name register -d -p 8080:80 sxmpl3/login-app > /dev/null 2>&1
+   docker run --name login -d -p 8080:80 -e PHP_EXTENSION=mysqli sxmpl3/login-app > /dev/null 2>&1
    echo -e "\n[+] Iniciado con éxito"
    echo -e ""
 fi 
@@ -69,7 +69,7 @@ if [[ $1 == "-r" ]];then
 
    echo -e "\n[-] Iniciando contenedor de Register en el puerto 8081..."
    echo -e ""
-   docker run --name register -d -p 8081:80 sxmpl3/register-app > /dev/null 2>&1
+   docker run --name register -d -p 8081:80 -e PHP_EXTENSION=mysqli sxmpl3/register-app > /dev/null 2>&1
    echo -e "\n[+] Iniciado con éxito"
    echo -e ""
 fi
