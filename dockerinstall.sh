@@ -48,13 +48,15 @@ fi
 if [[ $1 == "-m" ]];then
     
     echo -e "\n[-] Iniciando contenedor de MySQL en el puerto 3333..."
-    docker run --name mysql -e MYSQL_ROOT_PASSWORD=@Puente22 -d -p 3333:3306 mysql > /dev/null 2>&1
-    MYSQL=$(docker ps | awk 'NR==2{print $1}') > /dev/null 2>&1
+    docker run --name mysql -e MYSQL_ROOT_PASSWORD=@Puente22 -d -p 3333:3306 \
+    -e MYSQL_USER=root \
+    -e MYSQL_PASSWORD=@Puente22 \
+    -e MYSQL_DATABASE=wordpress \
+    -e MYSQL_DATABASE=credentials \
+    mysql > /dev/null 2>&1
     echo -e ""
-    echo -e "\n[+] Accediendo al contenedor de MySQL..."
+    echo -e "\n[+] Iniciado con éxito"
     echo -e ""
-    docker exec -it $MYSQL /bin/bash
-    # UNA VEZ EJECUTADO EL COMANDO REVISAR EL README
 fi
 
 if [[ $1 == "-l" ]];then
