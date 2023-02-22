@@ -26,7 +26,6 @@ if [[ $1 == "-d" ]];then
 
     echo -e "\n[-] Instalando docker y las imagenes necesarias...(esto puede llevar algo de tiempo)"
     apt install docker docker-compose -y > /dev/null 2>&1
-    apt update -y -qq
     echo -e ""
     docker pull wordpress > /dev/null 2>&1
     docker pull mysql > /dev/null 2>&1
