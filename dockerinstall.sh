@@ -31,6 +31,7 @@ if [[ $1 == "-d" ]];then
     docker pull mysql > /dev/null 2>&1
     docker pull sxmpl3/login-app > /dev/null 2>&1
     docker pull sxmpl3/register-app > /dev/null 2>&1
+    docker network create my-network
     echo -e "\n[+] Instalado con éxito"
     echo -e ""
 fi
@@ -47,7 +48,7 @@ fi
 if [[ $1 == "-m" ]];then
     
     echo -e "\n[-] Iniciando contenedor de MySQL en el puerto 3333..."
-    docker run --name mysql -e MYSQL_ROOT_PASSWORD=@Puente22 -d -p 3333:3306 \
+    docker run --name mysql -e MYSQL_ROOT_PASSWORD=@Puente22 --network my-network -d -p 3333:3306 \
     -e MYSQL_DATABASE=credentials \
     -v $PWD/init.sql \
     mysql:latest > /dev/null 2>&1
@@ -60,7 +61,7 @@ if [[ $1 == "-l" ]];then
     
    echo -e "\n[-] Iniciando contenedor de Login en el puerto 8080..."
    echo -e ""
-   docker run --name login -d -p 8080:80 -e PHP_EXTENSION=mysqli sxmpl3/login-app > /dev/null 2>&1
+   docker run --name login -d -p 8080:80 -e --network my-network sxmpl3/login-app > /dev/null 2>&1
    echo -e "\n[+] Iniciado con éxito"
    echo -e ""
 fi 
@@ -69,7 +70,7 @@ if [[ $1 == "-r" ]];then
 
    echo -e "\n[-] Iniciando contenedor de Register en el puerto 8081..."
    echo -e ""
-   docker run --name register -d -p 8081:80 -e PHP_EXTENSION=mysqli sxmpl3/register-app > /dev/null 2>&1
+   docker run --name register -d -p 8081:80 --network my-network sxmpl3/register-app  > /dev/null 2>&1
    echo -e "\n[+] Iniciado con éxito"
    echo -e ""
 fi
