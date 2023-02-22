@@ -49,7 +49,6 @@ if [[ $1 == "-m" ]];then
     echo -e "\n[-] Iniciando contenedor de MySQL en el puerto 3333..."
     docker run --name mysql -e MYSQL_ROOT_PASSWORD=@Puente22 -d -p 3333:3306 \
     -e MYSQL_DATABASE=credentials \
-    -v $PWD/init.sql \
     mysql:latest > /dev/null 2>&1
     echo -e ""
     echo -e "\n[+] Iniciado con éxito"
