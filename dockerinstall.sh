@@ -59,7 +59,7 @@ if [[ $1 == "-l" ]];then
     
    echo -e "\n[-] Iniciando contenedor de Login en el puerto 8080..."
    echo -e ""
-   docker run --name login -d -p 8080:80 -e sxmpl3/login-app > /dev/null 2>&1
+   docker run --name login -d -p 8080:80 sxmpl3/login-app > /dev/null 2>&1
    echo -e "\n[+] Iniciado con éxito"
    echo -e ""
 fi 
