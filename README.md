@@ -2,9 +2,6 @@
 
 Herramienta creada en bash con la intención de facilitar la implementación de 4 Dockers en una instancia EC2
 
-Login y Register creados por [nicogarcia0](https://github.com/nicogarcia0)
-
-
 # COMO USAR LA HERRAMIENTA
 
 Una vez iniciamos la instancia de AWS y tenemos una conexion via SSH entablada con nuestra máquina, realizamos los siguientes comandos
