@@ -76,4 +76,13 @@ if [[ $1 == "-r" ]];then
    docker exec -it register /bin/bash
 fi
 
+if [[ $1 == "-k" ]];then
+    
+    echo -e "\n[-] Iniciando servicio de monitorización..."
+    echo -e ""
+    docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name kuma louislam/uptime-kuma:1 > /dev/null 2>&1
+    echo -e "\n[+] Iniciado con éxito"
+    echo -e ""
+fi
+
 
