@@ -47,11 +47,26 @@ Una vez iniciamos la instancia de AWS y tenemos una conexion via SSH entablada c
 # Login
   
     ./dockerinstall.sh -l
- 
+    
+    apt update -y
+    
+    apt install nano -y
+    
+    nano index.php
+    
+    Buscamos $IPPUBLICA e IPPRIVADA y cambiamos cada valor por nuestra respectiva IP Pública o Privada
     
 # Register
   
     ./dockerinstall.sh -r
+    
+    apt update -y
+    
+    apt install nano -y
+    
+    nano index.php
+    
+    Buscamos $IPPUBLICA e IPPRIVADA y cambiamos cada valor por nuestra respectiva IP Pública o Privada
   
   
   
