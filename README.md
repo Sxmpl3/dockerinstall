@@ -39,7 +39,7 @@ Una vez iniciamos la instancia de AWS y tenemos una conexion via SSH entablada c
   
     use credentials;
 
-    create table credentials (username varchar(255), password varchar(255));
+    create table users (username varchar(255), password varchar(255));
     
 
 # Wordpress
