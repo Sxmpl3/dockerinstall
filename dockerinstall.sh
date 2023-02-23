@@ -19,6 +19,7 @@ if [[ $1 == "-h" ]];then
     echo -e "./dockerinstall.sh -m [INSTALACION DE CONTENEDOR MARIADB]"
     echo -e "./dockerinstall.sh -l [INSTALACION DE CONTENEDOR LOGIN]"
     echo -e "./dockerinstall.sh -r [INSTALACION DE CONTENEDOR REGISTER]"
+    echo -e "./dockerinstall.sh -k [SERVICIO DE MONITORIZACIÓN]"
     echo -e ""
 fi
 
