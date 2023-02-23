@@ -30,10 +30,6 @@ Una vez iniciamos la instancia de AWS y tenemos una conexion via SSH entablada c
   
     @Puente22
   
-    create database wordpress;
-  
-    create database credentials;
-  
     use credentials;
 
     create table users (username varchar(255), password varchar(255));
