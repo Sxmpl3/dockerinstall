@@ -51,8 +51,9 @@ if [[ $1 == "-m" ]];then
     -e MYSQL_DATABASE=credentials \
     mysql:latest > /dev/null 2>&1
     echo -e ""
-    echo -e "\n[+] Iniciado con éxito"
+    echo -e "\n[+] Accediendo al contenedor de MYSQL..."
     echo -e ""
+    docker exec -it mysql /bin/bash
 fi
 
 if [[ $1 == "-l" ]];then
