@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# SCRIPT CREADO PARA LA INSTALACION DE FORMA AUTOMATICA 4 DOCKERS DISTINTOS EN UNA INSTANCIA EC2 DE AMAZON, CADA CONTENEDOR SE REENVIA A OTRO PUERTO DISTINTO
-
 if [[ $1 == "" ]];then
 
     echo -e "[USE EL SIGUIENTE PARAMETRO PARA APRENDER USAR LA HERRAMIENTA]"
@@ -85,5 +83,7 @@ if [[ $1 == "-k" ]];then
     echo -e "\n[+] Iniciado con éxito"
     echo -e ""
 fi
+
+#By Sxmpl3
 
 
