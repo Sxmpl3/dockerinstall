@@ -50,7 +50,7 @@ Una vez iniciamos la instancia de AWS y tenemos una conexion via SSH entablada c
     
     nano index.php
     
-    Buscamos $IPPUBLICA e IPPRIVADA y cambiamos cada valor por nuestra respectiva IP Pública o Privada
+    Buscamos $IPPUBLICA e $IPPRIVADA y cambiamos cada valor por nuestra respectiva IP Pública o Privada
     
 # Register
   
@@ -62,7 +62,7 @@ Una vez iniciamos la instancia de AWS y tenemos una conexion via SSH entablada c
     
     nano index.php
     
-    Buscamos $IPPUBLICA e IPPRIVADA y cambiamos cada valor por nuestra respectiva IP Pública o Privada
+    Buscamos $IPPUBLICA e $IPPRIVADA y cambiamos cada valor por nuestra respectiva IP Pública o Privada
   
   
   
